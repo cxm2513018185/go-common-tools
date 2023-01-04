@@ -8,6 +8,7 @@ func init() {
 	// 注册子命令
 	rootCmd.AddCommand(wordCmd)
 	rootCmd.AddCommand(timeCmd)
+	rootCmd.AddCommand(sqlCmd)
 }
 
 func Execute() error {
