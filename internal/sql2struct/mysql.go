@@ -29,6 +29,35 @@ type TableColumn struct {
 	ColumnComment string
 }
 
+// DBTypeToStructType 表字段类型映射
+var DBTypeToStructType = map[string]string{
+	"int":        "int32",
+	"tinyint":    "int8",
+	"smallint":   "int",
+	"mediumint":  "int64",
+	"bigint":     "int64",
+	"bit":        "int",
+	"bool":       "bool",
+	"enum":       "string",
+	"set":        "string",
+	"varchar":    "string",
+	"char":       "string",
+	"tinytext":   "string",
+	"mediumtext": "string",
+	"text":       "string",
+	"longtext":   "string",
+	"blob":       "string",
+	"tinyblob":   "string",
+	"mediumblob": "string",
+	"longblob":   "string",
+	"date":       "time.Time",
+	"datetime":   "time.Time",
+	"timestamp":  "time.Time",
+	"time":       "time.Time",
+	"float":      "float64",
+	"double":     "float64",
+}
+
 func NewDBModel(info *DBInfo) *DBModel {
 	return &DBModel{
 		DBInfo: info,
